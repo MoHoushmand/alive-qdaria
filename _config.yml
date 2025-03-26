@@ -1,0 +1,72 @@
+#######################################################################################
+# A default configuration that will be loaded for all jupyter books
+# See the documentation for help and more options: 
+# https://jupyterbook.org/customize/config.html
+
+#######################################################################################
+# Book settings
+title                       : alive-qdaria-book  # The title of the book. Will be placed in the left navbar.
+author                      : Daniel Mo Houshmand  # The author of the book
+copyright                   : "2025"  # Copyright year to be placed in the footer
+logo                        : images/D58.png  # A path to the book logo
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+  thebe: true
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/MoHoushmand/alive-qdaria-book  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+
+sphinx:
+  extra_extensions:
+  - sphinx_inline_tabs
+  - sphinx_jupyterbook_latex
+  - myst_nb
+  - sphinx_copybutton
+  - sphinx_design
+  - sphinx_thebe
+
+  config:
+    html_theme: sphinx_rtd_theme
+    pygments_style: material
+    html_title: Daniel Mo Houshmand
+    html_static_path: [_static]
+    html_css_files: [custom.css]
+    html_sidebars:  globaltoc.html, relations.html, sourcelink.html, searchbox.html, localtoc.html
+    html_theme_options:
+      logo_only: true
+      use_download_button: True
+      repository_url: https://github.com/MoHoushmand/MoHoushmand.github.io
+      display_version: True
+      prev_next_buttons_location: bottom
+      collapse_navigation: True
+      sticky_navigation: True
+      navigation_depth: 5
+      includehidden: True
+      titles_only: True
+
+thebe_config:
+  repository_url: https://github.com/MoHoushmand/alive-qdaria-book
+  repository_branch: main
+  kernelName: python3

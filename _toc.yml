@@ -1,0 +1,21 @@
+# Table of contents
+format: jb-book
+root: content/intro
+
+defaults:  # The defaults key will be applied to all chapters and sub-sections
+  titlesonly: True
+options:
+  numbered: true
+
+parts:
+  - caption: Alive Introduction
+    numbered: true
+    chapters:
+      - file: content/alive-intro
+      - file: content/alive
+
+  - caption: Risk Dashboard
+    numbered: true
+    chapters:
+      - file: content/risk_dashboard
+      - file: content/technical_documentation
